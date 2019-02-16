@@ -15,16 +15,12 @@
 ## Objective
 
 To predict the sales price of a listing based on the information provided by the user for that listing.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 ## Flowchart
 
-![Image of Yaktocat](image.png)
+![Image of Yaktocat](Images/image.png)
+
 
 ## Parameters given by User to predict:
 
@@ -1084,8 +1080,8 @@ def lowercase(x):
 
 1. **PorterStemmer**: Convert all the words into its root form, eg: working becomes work, saw becomes see.
 
-![Alt text](9.PNG)
-![Alt text](10.PNG)
+![Alt text](Images/9.PNG)
+![Alt text](Images/10.PNG)
 
 
 ```python
@@ -1102,7 +1098,7 @@ def removal_stem_words(x):
 
     [nltk_data] Downloading package punkt to /root/nltk_data...
     [nltk_data]   Package punkt is already up-to-date!
-
+    
 
 ## Preprocessing the Data
 
@@ -1225,7 +1221,7 @@ print('total_combined_data:', new_combined.shape[0])
     train_data: 1482535
     test_data: 693359
     total_combined_data: 2175894
-
+    
 
 
 ```python
@@ -1659,24 +1655,27 @@ new_combined.isna().sum()
 
 To do so we are using diffrent types of encoder:
 1. CountVectorizer: will apply it on 'name' column which will give sparse matrix of the occurence of all the words.
-![Alt text](11.PNG)
+![Alt text](Images/11.PNG)
 
 2. TfidfVectorizer: will apply it on 'item_description' column which will also give the sparse matrix of the occurence but in normalized form
 
 TF-IDF stands for “Term Frequency — Inverse Data Frequency”. First, we will learn what this term means mathematically.
 
 Term Frequency (tf): gives us the frequency of the word in each document in the corpus. It is the ratio of number of times the word appears in a document compared to the total number of words in that document. It increases as the number of occurrences of that word within the document increases. Each document has its own tf.
-![Alt text](12.PNG)
+![Alt text](Images/12.PNG)
+
+
 
 Inverse Data Frequency (idf): used to calculate the weight of rare words across all documents in the corpus. The words that occur rarely in the corpus have a high IDF score. It is given by the equation below.
-![Alt text](13.PNG)
+![Alt text](Images/13.PNG)
 
 Combining these two we come up with the TF-IDF score (w) for a word in a document in the corpus. It is the product of tf and idf:
-![Alt text](14.PNG)
+![Alt text](Images/14.PNG)
+
 
 3. LabelBinarizer: will apply it on 'brand_name' column as its a categorical variable so it will create a 2D matrix with shape (number_of_rows, number_of_unique_brands)
 
-![Alt text](15.PNG)
+![Alt text](Images/15.PNG)
 
 
 ```python
@@ -1829,10 +1828,13 @@ ytrain
 
 ## Ridge Regression
 
-![Alt text](5.png)
-![Alt text](6.png)
-![Alt text](7.png)
-![Alt text](8.png)
+![Alt text](Images/5.png)
+
+![Alt text](Images/6.png)
+
+![Alt text](Images/7.png)
+
+![Alt text](Images/8.png)
 
 
 ```python
@@ -1851,7 +1853,7 @@ print('Time Taken:',time.time() - now)
 
     Loss: 30.298763749438383
     Time Taken: 110.44774222373962
-
+    
 
 
 ```python
@@ -1935,7 +1937,7 @@ print('Time Taken:',time.time() - now)
 
     Loss: 31.51026504298643
     Time Taken: 58.74648308753967
-
+    
 
 
 ```python
@@ -1975,10 +1977,13 @@ y_pred_lgbm[50:100]
 
 ## Linear Regression
 
-![Alt text](1.png)
-![Alt text](2.png)
-![Alt text](3.png)
-![Alt text](4.png)
+![Alt text](Images/1.png)
+
+![Alt text](Images/2.png)
+
+![Alt text](Images/3.png)
+
+![Alt text](Images/4.png)
 
 
 ```python
@@ -1997,7 +2002,7 @@ print('Time Taken:',time.time() - now)
 
     Loss: 46.30636796049923
     Time Taken: 7176.847347021103
-
+    
 
 
 ```python
@@ -2069,3 +2074,5 @@ y_pred_rd[:50]
 3. https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 4. https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc
 5. Hands-On Machine Learning with Scikit-Learn and TensorFlow by Aurélien Géron
+
+## Thank you
